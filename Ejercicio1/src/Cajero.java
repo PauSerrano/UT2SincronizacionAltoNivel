@@ -26,7 +26,7 @@ public class Cajero implements Runnable {
 		
 		try{
 			// sacamos un cliente de la cola, imprimimos "CAJERO X ATENDIENDO CLIENTE Y"
-			System.out.println("Cajero: "+this.id+ " Atendiendo cliente: "+ q.take().toString());
+			System.out.println("Cajero: "+this.id+ " Atendiendo cliente: "+ q.element().toString());
 			// esperamos un tiempo aleatorio entre 1segundo y tiempoMaximoPorCliente
 			// AYUDA: (int)(rnd.nextDouble() * tiempoMaximoPorCliente + 1);
 			q.poll((int)(rnd.nextDouble() * tiempoMaximoPorCliente + 1), TimeUnit.SECONDS);

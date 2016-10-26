@@ -20,6 +20,7 @@ public class GeneradorClientes implements Runnable {
 		// TODO: generamos "clientesIniciales" y los encolamos
 		for (int i=0; i < clientesIniciales; i++){
 			Cliente c = new Cliente(i);
+			//System.out.println(i);
 			try {
 				q.put(c);
 			} catch (InterruptedException e) {
@@ -28,10 +29,11 @@ public class GeneradorClientes implements Runnable {
 		}
 		
 		// mientras no nos pasemos del tiempoMaximo
-		int j = 0;
+		int j = clientesIniciales;
 		
 		while ((System.nanoTime() - tiempoInicial) < tiempoMaximo) {
-			
+		
+		//System.out.println(j);
 			for (int i=0; i< clientesPorSegundo; i++){
 			
 			Cliente c = new Cliente(j+i);
@@ -47,7 +49,7 @@ public class GeneradorClientes implements Runnable {
 			}
 			
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

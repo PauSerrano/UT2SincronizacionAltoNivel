@@ -20,4 +20,16 @@ public class Cliente {
 		}
 		return this.tiempoFinal - this.tiempoInicial;
 	}
+	
+	
+	public int getId (){
+		return id;
+	}
+	@Override
+	public String toString (){
+		String cliente;
+		cliente = "Cliente num: "+this.getId();
+		
+		return cliente;
+	}
 }
